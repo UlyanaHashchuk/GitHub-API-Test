@@ -34,7 +34,7 @@ export default ({ reposUrl }) => {
 
   useEffect(() => {
     loadPublicRepos(reposUrl).then((publicRepos) => setPublicRepos(publicRepos))
-  }, [])
+  }, [reposUrl])
 
   const getFormattedRepos = () => {
     let formattedRepos = [...publicRepos]
