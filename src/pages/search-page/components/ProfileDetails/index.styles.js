@@ -3,15 +3,17 @@ import styled from 'styled-components'
 const Profile = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin: 15px;
 `
 
-const ProfileInfo = styled.div`
+const Info = styled.div`
   display: flex;
   flex-direction: column;
 `
 
 const Image = styled.img`
-  width: 60px;
+  width: 200px;
+  border-radius: 50%;
 `
 
-export { Profile, Image, ProfileInfo }
+export { Profile, Image, Info }

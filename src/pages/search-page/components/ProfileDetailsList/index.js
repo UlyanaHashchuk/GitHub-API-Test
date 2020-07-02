@@ -3,8 +3,6 @@ import ProfileDetails from '../ProfileDetails'
 
 export default ({ profDetails }) => (
   <div>
-    {profDetails.map((profDetail) => (
-      <ProfileDetails {...profDetail} key={profDetail.id} />
-    ))}
+    {profDetails && <ProfileDetails {...profDetails} key={profDetails.id} />}
   </div>
 )
