@@ -1,4 +1,4 @@
-## Test GitHub API
+## Test GitHub API :woman_scientist:
 
 "Test GitHub API" is a React SPA by using Create React App and [GitHub API](https://github.com/) to do asynchronous calls. It includes two pages:
 
