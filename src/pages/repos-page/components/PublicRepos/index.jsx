@@ -1,4 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import {
+  RepoSearch,
+  RepoInput,
+  CheckboxLabel,
+  Checkbox,
+  Container,
+  Grid,
+  RepoName,
+  Language,
+  Stars,
+  RepoBox,
+} from './index.styles'
+import { Label } from '../../../search-page/components/SearchForm/index.styles'
 
 const loadPublicRepos = (reposUrl) =>
   new Promise((resolve) => {
@@ -55,26 +68,34 @@ export default ({ reposUrl }) => {
   return (
     <>
       {!publicRepos.length && <div>Loading...</div>}
-      <input
-        type="text"
-        value={searchInput}
-        onChange={({ target: { value } }) => setSearchInput(value)}
-      />
-      <input
-        type="checkbox"
-        checked={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
-      />
-      <div>
-        {getFormattedRepos().map(({ name, url, key, language, stars }) => (
-          <div key={key}>
-            <div>{name}</div>
-            <div>{language}</div>
-            <div>{stars}</div>
-            <div>{url}</div>
-          </div>
-        ))}
-      </div>
+      <RepoSearch>
+        <Label>Search repository by name</Label>
+        <RepoInput
+          type="text"
+          value={searchInput}
+          onChange={({ target: { value } }) => setSearchInput(value)}
+          placeholder="Repository name..."
+        />
+        <CheckboxLabel>
+          <Checkbox
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+          />
+          Sort by stars
+        </CheckboxLabel>
+      </RepoSearch>
+      <Container>
+        <Grid>
+          {getFormattedRepos().map(({ name, url, key, language, stars }) => (
+            <RepoBox key={key}>
+              <RepoName href={url}>{name}</RepoName>
+              <Stars>☆{stars}</Stars>
+              <Language>{language}</Language>
+            </RepoBox>
+          ))}
+        </Grid>
+      </Container>
     </>
   )
 }

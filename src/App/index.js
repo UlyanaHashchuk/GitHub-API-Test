@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import GlobalStyle from './index.styles'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from '../components/Header'
 import SearchPage from '../pages/search-page'
@@ -10,6 +11,7 @@ export default () => {
 
   return (
     <>
+      <GlobalStyle />
       <Header />
       <ProfDetailsContext.Provider value={{ profDetails, setProfDetails }}>
         <Router>

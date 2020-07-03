@@ -7,7 +7,6 @@ const Form = styled.form`
 `
 
 const Label = styled.label`
-  font-family: Arial;
   font-size: 20px;
   margin: 25px;
   border-bottom: 1px solid #ccc;
@@ -17,7 +16,6 @@ const Input = styled.input`
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
-  background-color: white;
   padding: 5px 10px;
 `
 
