@@ -1,8 +1,8 @@
 import React from 'react'
-import Heading from './index.styles'
+import { Heading, BackToHome } from './index.styles'
 
 export default () => (
-	<>
-    <Heading>Test GitHub API</Heading>
-	</>
+  <Heading>
+    <BackToHome href="/">Test GitHub API</BackToHome>
+  </Heading>
 )

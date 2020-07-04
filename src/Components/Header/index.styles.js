@@ -7,4 +7,9 @@ const Heading = styled.div`
   font-size: 25px;
   padding-left: 50px;
 `
-export default Heading
+
+const BackToHome = styled.a`
+  color: white;
+`
+
+export { Heading, BackToHome }
