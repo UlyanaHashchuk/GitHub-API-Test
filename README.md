@@ -1,4 +1,6 @@
-## GitHub-API-Test :woman_scientist:
+## [GitHub-API-Test](https://ulyanahashchuk.github.io/GitHub-API-Test/) :woman_scientist:
+
+Live demo: [GitHub-API-Test](https://ulyanahashchuk.github.io/GitHub-API-Test/)
 
 `GitHub-API-Test` is a React SPA by using Create React App and [GitHub API](https://github.com/) to do asynchronous calls. It includes two pages:
 
