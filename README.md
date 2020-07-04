@@ -9,6 +9,8 @@ Live demo: [GitHub-API-Test](https://ulyanahashchuk.github.io/GitHub-API-Test/)
    - Filter public repositories by the repository name with an input element and sort (highest first) by GitHub stars with checkbox element.
    - By clicking public repository name, you will be linked to that repository on [GitHub](https://github.com/).
 
+`Tip:` You can go back to first search page by clicking the top left name `GitHub API Test`.
+
 Built with:
 
 - [x] React, React Hooks, ES6, ESlint, Prettier
