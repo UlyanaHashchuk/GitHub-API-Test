@@ -6,7 +6,7 @@ Live demo: [GitHub-API-Test](https://ulyanahashchuk.github.io/GitHub-API-Test/)
 
 1. First page where GitHub user profile is fetched with input and button elements to show user profile details (`avatar`, `name`, `bio`, `public_repos`).
 2. Second page where is shown user `public_repos` is linked from the first page at different page route. On second page you can also:
-   - Filter public repositories by the **exact** repository name with an input element and sort (highest first) by GitHub stars with checkbox element.
+   - Filter public repositories by the repository name with an input element and sort (highest first) by GitHub stars with checkbox element.
    - By clicking public repository name, you will be linked to that repository on [GitHub](https://github.com/).
 
 Built with:

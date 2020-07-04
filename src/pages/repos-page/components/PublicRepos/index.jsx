@@ -62,7 +62,7 @@ export default ({ reposUrl }) => {
 
     if (searchInput !== '') {
       filteredRepos = filteredRepos.filter(({ name }) =>
-        name.includes(searchInput)
+        name.toLowerCase().includes(searchInput.toLowerCase())
       )
     }
 

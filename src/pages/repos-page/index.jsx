@@ -7,14 +7,10 @@ export default () => {
   const { profDetails } = React.useContext(ProfDetailsContext)
 
   if (!profDetails) {
-    return <Redirect to="/GitHub-API-Test" />
+    return <Redirect to="/" />
   }
 
   const { repos_url } = profDetails
 
-  return (
-    <>
-      <PublicRepos reposUrl={repos_url} />
-    </>
-  )
+  return <PublicRepos reposUrl={repos_url} />
 }

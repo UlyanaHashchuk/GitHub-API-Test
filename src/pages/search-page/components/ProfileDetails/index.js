@@ -16,7 +16,7 @@ export default ({ avatar_url, name, bio, public_repos }) => (
     <Info>
       <Name>{name}</Name>
       <Bio>{bio}</Bio>
-      <Link to="/GitHub-API-Test/publicrepos">
+      <Link to="/publicrepos">
         <RepoInfo>
           <div>
             <strong>{public_repos}</strong>
