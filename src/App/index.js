@@ -16,7 +16,7 @@ export default () => {
       <ProfDetailsContext.Provider value={{ profDetails, setProfDetails }}>
         <Router>
           <Switch>
-            <Route path="/GitHub-API-Test/publicrepos">
+            <Route exact path="/GitHub-API-Test/publicrepos">
               <ReposPage />
             </Route>
             <Route path="/GitHub-API-Test/">
