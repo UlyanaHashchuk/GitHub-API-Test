@@ -9,7 +9,7 @@
 
 Built with:
 
-- [x] React, React Hooks, ES6, ESlint
+- [x] React, React Hooks, ES6, ESlint, Prettier
 - [x] Styled Components, Stylelint
 - [x] React Router
 - [x] Input Validations
