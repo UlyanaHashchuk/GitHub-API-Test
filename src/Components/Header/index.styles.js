@@ -10,6 +10,10 @@ const Heading = styled.div`
 
 const BackToHome = styled.a`
   color: white;
+
+  &:hover {
+    color: #ccc;
+  }
 `
 
 export { Heading, BackToHome }

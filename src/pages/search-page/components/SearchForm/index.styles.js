@@ -20,13 +20,11 @@ const Input = styled.input`
 `
 
 const Button = styled.button`
-  display: inline-block;
   margin: 15px;
   padding: 10px 15px;
   font-size: 18px;
   cursor: pointer;
   text-align: center;
-  text-decoration: none;
   outline: none;
   color: #fff;
   background-color: #79b6f2;
