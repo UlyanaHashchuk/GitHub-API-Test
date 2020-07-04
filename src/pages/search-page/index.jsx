@@ -1,6 +1,6 @@
 import React from 'react'
 import SearchForm from './components/SearchForm'
-import ProfileDetailsList from './components/ProfileDetailsList'
+import ProfileDetails from './components/ProfileDetails'
 import ProfDetailsContext from '../../contexts/ProfDetailsContext'
 
 export default () => {
@@ -13,7 +13,7 @@ export default () => {
   return (
     <>
       <SearchForm onSubmit={addNewDetails} />
-      <ProfileDetailsList profDetails={profDetails} />
+      {profDetails && <ProfileDetails {...profDetails} />}
     </>
   )
 }

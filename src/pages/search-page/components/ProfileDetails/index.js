@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import {
   Profile,
   Image,
@@ -8,23 +9,17 @@ import {
   RepoInfo,
   RepoTitle,
 } from './index.styles'
-import { Link } from 'react-router-dom'
 
-export default (profDetails) => (
+export default ({ avatar_url, name, bio, public_repos }) => (
   <Profile>
-    <Image alt="avatar" src={profDetails.avatar_url} />
+    <Image alt="avatar" src={avatar_url} />
     <Info>
-      <Name>{profDetails.name}</Name>
-      <Bio>{profDetails.bio}</Bio>
-      <Link
-        to="/publicrepos"
-        style={{
-          textDecoration: 'none',
-        }}
-      >
+      <Name>{name}</Name>
+      <Bio>{bio}</Bio>
+      <Link to="/publicrepos">
         <RepoInfo>
           <div>
-            <strong>{profDetails.public_repos}</strong>
+            <strong>{public_repos}</strong>
           </div>
           <RepoTitle>Public Repositories</RepoTitle>
         </RepoInfo>

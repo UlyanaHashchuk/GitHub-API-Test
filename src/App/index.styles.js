@@ -7,6 +7,9 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     font-family: Arial;
   }
+  a {
+    text-decoration: none;
+  }
 `
 
 export default GlobalStyle

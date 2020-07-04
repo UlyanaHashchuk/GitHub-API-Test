@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Label } from '../../../search-page/components/SearchForm/index.styles'
 import {
   RepoSearch,
   RepoInput,
@@ -11,7 +12,6 @@ import {
   Stars,
   RepoBox,
 } from './index.styles'
-import { Label } from '../../../search-page/components/SearchForm/index.styles'
 
 const loadPublicRepos = (reposUrl) =>
   new Promise((resolve) => {
@@ -30,11 +30,11 @@ const loadPublicRepos = (reposUrl) =>
     )
   })
 
-const starsSort = ({ stars: starsA }, { stars: starsB }) => {
-  if (starsA < starsB) {
+const compareStars = ({ stars: starA }, { stars: starB }) => {
+  if (starA < starB) {
     return 1
   }
-  if (starsA > starsB) {
+  if (starA > starB) {
     return -1
   }
   return 0
@@ -49,25 +49,24 @@ export default ({ reposUrl }) => {
     loadPublicRepos(reposUrl).then((publicRepos) => setPublicRepos(publicRepos))
   }, [reposUrl])
 
-  const getFormattedRepos = () => {
-    let formattedRepos = [...publicRepos]
+  const getFilteredRepos = () => {
+    let filteredRepos = [...publicRepos]
 
     if (isChecked) {
-      formattedRepos = formattedRepos.sort(starsSort)
+      filteredRepos = filteredRepos.sort(compareStars)
     }
 
     if (searchInput !== '') {
-      formattedRepos = formattedRepos.filter(({ name }) =>
+      filteredRepos = filteredRepos.filter(({ name }) =>
         name.includes(searchInput)
       )
     }
 
-    return formattedRepos
+    return filteredRepos
   }
 
   return (
     <>
-      {!publicRepos.length && <div>Loading...</div>}
       <RepoSearch>
         <Label>Search repository by name</Label>
         <RepoInput
@@ -85,9 +84,10 @@ export default ({ reposUrl }) => {
           Sort by stars
         </CheckboxLabel>
       </RepoSearch>
+      {!publicRepos.length && <div>Loading...</div>}
       <Container>
         <Grid>
-          {getFormattedRepos().map(({ name, url, key, language, stars }) => (
+          {getFilteredRepos().map(({ name, url, key, language, stars }) => (
             <RepoBox key={key}>
               <RepoName href={url}>{name}</RepoName>
               <Stars>☆{stars}</Stars>

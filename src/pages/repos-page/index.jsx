@@ -1,7 +1,7 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 import ProfDetailsContext from '../../contexts/ProfDetailsContext'
 import PublicRepos from './components/PublicRepos'
-import { Redirect } from 'react-router-dom'
 
 export default () => {
   const { profDetails } = React.useContext(ProfDetailsContext)
