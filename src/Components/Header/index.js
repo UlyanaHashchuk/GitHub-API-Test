@@ -3,6 +3,6 @@ import { Heading, BackToHome } from './index.styles'
 
 export default () => (
   <Heading>
-    <BackToHome href="/">Test GitHub API</BackToHome>
+    <BackToHome href="/GitHub-API-Test/">Test GitHub API</BackToHome>
   </Heading>
 )
