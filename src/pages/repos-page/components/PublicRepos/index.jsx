@@ -44,9 +44,13 @@ export default ({ reposUrl }) => {
   const [publicRepos, setPublicRepos] = useState([])
   const [isChecked, setIsChecked] = useState(false)
   const [searchInput, setSearchInput] = useState('')
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    loadPublicRepos(reposUrl).then((publicRepos) => setPublicRepos(publicRepos))
+    loadPublicRepos(reposUrl).then((publicRepos) => {
+      setPublicRepos(publicRepos)
+      setIsLoading(false)
+    })
   }, [reposUrl])
 
   const getFilteredRepos = () => {
@@ -84,7 +88,7 @@ export default ({ reposUrl }) => {
           Sort by stars
         </CheckboxLabel>
       </RepoSearch>
-      {!publicRepos.length && <div>Loading...</div>}
+      {isLoading && <div>Loading...</div>}
       <Container>
         <Grid>
           {getFilteredRepos().map(({ name, url, key, language, stars }) => (
