@@ -11,7 +11,7 @@ Live demo: [GitHub-API-Test](https://ulyanahashchuk.github.io/GitHub-API-Test/)
    - By clicking "..." in repository field, you will be linked to third page.
 3. Third page shows clicked repository details from the second page.
    - Used react-redux and query params.
-   - CLicking repository name will link to the GitHub repository.
+   - Clicking repository name will link to the GitHub repository.
    - If the repository has a homepage it will be shown in details and also is clickable.
 
 `Tip:` You can go back to first search page by clicking the top left name `GitHub API Test`.
