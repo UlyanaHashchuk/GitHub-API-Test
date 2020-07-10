@@ -38,7 +38,6 @@ const Grid = styled.div`
   @media screen and (max-width: 600px) {
     flex-direction: column;
     align-items: center;
-    min-width: 100%;
   }
 
   @media screen and (max-width: 1100px) {
@@ -57,7 +56,7 @@ const RepoBox = styled.div`
   padding: 5px;
 
   @media screen and (max-width: 600px) {
-    min-width: 70%;
+    width: 80%;
   }
 
   @media screen and (max-width: 1100px) {
@@ -66,7 +65,6 @@ const RepoBox = styled.div`
 `
 
 const RepoName = styled.a`
-  text-decoration: none;
   font-size: 20px;
   color: #24292e;
 
@@ -85,6 +83,15 @@ const Stars = styled.div`
   color: #4d92d6;
 `
 
+const Details = styled.div`
+  padding-top: 10px;
+  color: #24292e;
+
+  &:hover {
+    color: #4d92d6;
+  }
+`
+
 export {
   RepoSearch,
   RepoInput,
@@ -96,4 +103,5 @@ export {
   Language,
   Stars,
   RepoBox,
+  Details,
 }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { Label } from '../../../search-page/components/SearchForm/index.styles'
 import {
   RepoSearch,
@@ -11,6 +12,7 @@ import {
   Language,
   Stars,
   RepoBox,
+  Details,
 } from './index.styles'
 
 const loadPublicRepos = (reposUrl) =>
@@ -24,6 +26,7 @@ const loadPublicRepos = (reposUrl) =>
             stars: repo.stargazers_count,
             language: repo.language,
             url: repo.html_url,
+            login: repo.owner.login,
           }))
         )
       )
@@ -91,13 +94,20 @@ export default ({ reposUrl }) => {
       {isLoading && <div>Loading...</div>}
       <Container>
         <Grid>
-          {getFilteredRepos().map(({ name, url, key, language, stars }) => (
-            <RepoBox key={key}>
-              <RepoName href={url}>{name}</RepoName>
-              <Stars>☆{stars}</Stars>
-              <Language>{language}</Language>
-            </RepoBox>
-          ))}
+          {getFilteredRepos().map(
+            ({ name, url, key, language, stars, login }) => (
+              <RepoBox key={key}>
+                <RepoName href={url} target="_blank">
+                  {name}
+                </RepoName>
+                <Stars>☆{stars}</Stars>
+                <Language>{language}</Language>
+                <Link to={`/GitHub-API-Test/${login}/${name}`}>
+                  <Details>◦◦◦</Details>
+                </Link>
+              </RepoBox>
+            )
+          )}
         </Grid>
       </Container>
     </>

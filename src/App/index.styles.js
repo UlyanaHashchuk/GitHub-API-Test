@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     font-family: Arial;
   }
-  a {
+  a, div {
     text-decoration: none;
   }
 `
